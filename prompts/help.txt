@@ -1,0 +1,11 @@
+commands:
+
+tvon: turns on the tv
+tvoff: turns off the tv
+airon: turns on the air
+airoff: turns on the air
+loff: turn off the lights
+lon: turn on the lights
+say [message]: talk to david
+play [video]: search and play something on youtube
+sgpt [query]: ask a artificial inteligent for text answers, it has knowledge until august 2021

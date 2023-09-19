@@ -1,0 +1,7 @@
+{
+    "openai_key":"sk-<your key here>",
+    "model":"gpt-3.5-turbo",
+    "name":"<your name here>",
+    "max_allowed_tries": 3
+    
+}
