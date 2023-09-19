@@ -16,6 +16,7 @@ Usage: assistant.py [prompt]
 
 """
 
+
 if(len(sys.argv) < 2):
     print('Usage: assistant prompt')
     sys.exit()
@@ -71,16 +72,17 @@ while max_allowed_tries > 0:
       messages=messages)
   except openai.error.ServiceUnavailableError as e:
     print(e)
-    exit()
-  with open('logs/chat.json','w') as h:
-      h.write(json.dumps(chat_completion,indent=4))
+    exit(-1)
   commands = chat_completion.choices[0].message.content
   print('commands gpt decided to use: ',commands)
+  #reply help command:
   if(commands.startswith('help')):
       messages.append({"role": "system", "content": help})     
   else:
     if(commands.startswith('say')):
       sayCommand = True
+      commands = './saylabs.py ' + commands[4:]
+
     else:
       sayCommand = False
     args = ['bash','-c',commands]
@@ -92,6 +94,7 @@ while max_allowed_tries > 0:
     if(code != 0):
       messages.append({"role": "system", "content": 'command not found'})
       continue
+    #commands with no output and say commands will stop the loop
     if(output and not sayCommand):
       messages.append({"role": "system", "content": output.decode()})
     else:
