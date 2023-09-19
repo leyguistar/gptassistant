@@ -25,14 +25,23 @@ Unlike most systems, Assistant GPT does not interact directly with the final use
     ```shell
     pip install -r requirements.txt
     ```
+### Optional
+
+4. For wakeword with pvporcupine create a account for free at https://picovoice.ai/ and get an api key
+5. for text to speech with eleven labs create a account at https://beta.elevenlabs.io/
 
 ## Configuration
 
 1. Please add your OpenAI API key and the tester's name in `config.json`:
     ```json
     {
-      "openai_key": "your-openai-api-key",
-      "name": "tester-name"
+    "openai_key":"sk-<your key here>",
+    "model":"gpt-3.5-turbo",
+    "name":"<your name here>",
+    "max_allowed_tries": 3,
+    "eleven_labs_api_key":"<your key here>",
+    "eleven_labs_model":"<your model here>",
+    "porcupine_api_key":"<your key here>"
     }
     ```
 2. Adapt the `help.txt` file by adding the commands believed relevant for your application.
