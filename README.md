@@ -47,7 +47,7 @@ After configuring the application as described above, you can call the applicati
 
 ## Contributing
 
-Contributions are welcome! Please read the [Contributing Guide](./CONTRIBUTING.md) for more information.
+Contributions are welcome! Please message me at davida.sanchez@ciens.ucv.ve if you has any question.
 
 ## License
 
